@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DictionaryGame.Models;
+using DictionaryGame.Database;
 
 namespace DictionaryGame.Controllers;
 
@@ -16,12 +17,9 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult Index()
     {
-        string s = "branch";
-        int asd = 12;
-        int aaa = 10;
-        
         return View();
     }
+
     [HttpPost]
     public IActionResult Index(string adi)
     {
@@ -29,10 +27,28 @@ public class HomeController : Controller
         string s = adi;
         return View();
     }
+    [HttpGet]
+    public IActionResult ReadArticle()
+    {
+        return View();
+    }
+    [HttpGet]
+    public IActionResult FindDefinitions()
+    {
+        return View();
+    }
+    [HttpGet]
+    public IActionResult TestGame()
+    {
+        DbConnection dbo = new DbConnection();
+        IEnumerable<EnglishWord> listOfWord = dbo.GetWords();
+        
+        return View(listOfWord);
+    }
 
     public IActionResult Privacy()
     {
-        int i= 5;
+        
         return View();
     }
 

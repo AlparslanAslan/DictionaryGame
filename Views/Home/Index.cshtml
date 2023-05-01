@@ -1,11 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<form method="post" key="asd">
-    <div>
-        <label>İsim</label>
-        <input type="text" name="adi" />
 
-    </div>
-    <button type="submit" >Ekle</button>
-</form>
+<a href='@Url.Action("ReadArticle", "Home")'>
+    <button>Makale Okuma</button>
+</a>
+<a href='@Url.Action("TestGame", "Home")'>
+    <button>Kelime Bilgini Test Et</button>
+</a>
+<a href='@Url.Action("FindDefinitions", "Home")'>
+    <button>Kelimelerin Anlamlarını Bul</button>
+</a>
+
