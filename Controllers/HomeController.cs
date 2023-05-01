@@ -20,6 +20,7 @@ public class HomeController : Controller
 
     public IActionResult Privacy()
     {
+        int i= 5;
         return View();
     }
 
