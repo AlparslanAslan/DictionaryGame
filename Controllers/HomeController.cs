@@ -13,9 +13,20 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    [HttpGet]
     public IActionResult Index()
     {
         string s = "branch";
+        int asd = 12;
+        int aaa = 10;
+        
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Index(string adi)
+    {
+        var x = HttpContext.Request.Form["adi"].ToString();
+        string s = adi;
         return View();
     }
 
