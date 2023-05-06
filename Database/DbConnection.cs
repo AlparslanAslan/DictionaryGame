@@ -9,7 +9,7 @@ namespace DictionaryGame.Database
     class DbConnection
     {
         private static string connectionString= @"
- Server=172.17.0.2;Database=test;User Id=sa;Password=balamir1234;
+ Server=172.17.0.2;Database=test;User Id=sa;Password=;
 ";
         public IEnumerable<EnglishWord> GetWords()
         {
