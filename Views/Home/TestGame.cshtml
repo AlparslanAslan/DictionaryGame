@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DictionaryGame.Models.EnglishWord>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+  
+.column1 {
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.column2 {
+  float: left;
+  width: 80%;
+  padding: 5px;
+}
+</style>
+<script>
+function myFunction() {
+  if(document.getElementById("definitions").style.visibility == "hidden") 
+  document.getElementById("definitions").style.visibility = "visible";
+  else
+  document.getElementById("definitions").style.visibility = "hidden";
+
+}
+</script>
+<div style="text-align: center; color:blue; font-size: 30px;  " >
+   <b>Test Game</b> 
+</div>
+<button onclick="myFunction()"> Kelimelerin Anlamlarını Göster</button>
+
+<div class="row">
+<div class="column1"> 
+    <table>
+        <tr>
+            <th>Word</th>
+        </tr>
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td >@item.Name</td>
+        </tr>
+    }
+    </table>
+</div>
+<div class="column2" id="definitions" style="visibility: hidden;">
+    
+     <table >
+        <tr>
+            <th>Definition</th>
+        </tr>
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td >@item.Definition</td>
+        </tr>
+    }
+    
+    </table>
+</div> 
+</div> 
+
